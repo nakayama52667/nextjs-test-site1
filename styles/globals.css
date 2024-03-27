@@ -2,32 +2,244 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.width90 {
+  width: 90%;
+  margin: 0 auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.space {
+  height: 120px;
+}
+
+main {
+  /* padding-top: 50px; */
+}
+
+.blogAreaInner {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 0px;
+}
+
+.blogAreaInner:has(.w32)::after {
+  /* :has()疑似クラスとは、指定した要素がある場合にのみスタイルを適用できるCSS 2023/12月で全てのブラウザに対応された*/
+  content: "";
+  width: 32%;
+}
+
+.inner {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+/* モーダルウインドウスタイル */
+.modalArea {
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.modalArea .modalItem {
+  width: 30%;
+  height: 200px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  position: relative;
+}
+
+.modalArea::after {
+  content: "";
+  width: 30%;
+}
+
+
+
+
+
+/* カルーセルスライダー */
+.slideWrapper {
+  width: 100%;
+  height: 450px;
+}
+
+.slideImage {
+  object-fit: cover;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .slideImage {
+    aspect-ratio: initial;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+
+
+
+
+
+
+/* タブ */
+.react-tabs__tab--selected {
+  /* .react-tabs初期設定 */
+  outline: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.tabUl {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabLi {
+  width: 25%;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tabLi.react-tabs__tab--selected {
+  background-color: black;
+  color: white;
+}
+
+.tabContentH3 {
+  width: 90%;
+  max-width: 1000px;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  padding-bottom: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* フェードアニメーション */
+.fadeArea {
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 100px;
+  gap: 50px 0;
+}
+
+.fadeArea::after {
+  content: "";
+  width: 30%;
+}
+
+.fadeBox {
+  height: 600px;
+  background-color: red;
+}
+
+.fadeArea li {
+  width: 30%;
+}
+
+.imgBox {
+  width: 100%;
+}
+
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+/* トップに戻るボタン */
+html {
+  scroll-behavior: smooth;
+}
+
+.ScrollBtn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 1);
+  z-index: 3;
+}
+
+.ScrollBtn .icon {
+  position: absolute;
+  top: 5px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 30%;
+  height: 30%;
+  transform: rotate(45deg);
+  border-top: 1px solid rgba(0, 0, 0, 1);
+  border-left: 1px solid rgba(0, 0, 0, 1);
+}
+
+
+
+
+
+
+
+/* Not404 */
+
+.vh60 {
+  width: 100%;
+  height: 60vh;
+}
+
+.not404Text1 {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.not404Text2 {
+  display: block;
+  font-size: 200px;
+  font-weight: bold;
+  color: #f8f8f8;
+  text-align: center;
 }
